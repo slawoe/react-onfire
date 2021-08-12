@@ -13,7 +13,7 @@ const Home = () => {
   const { popular, newGames, upcoming } = useSelector((state) => state.games);
   return (
     <GameList>
-      <h1>Upcoming Games</h1>
+      <h2>Upcoming Games</h2>
       <Games>
         {upcoming.map((game) => (
           <Game
