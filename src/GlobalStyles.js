@@ -9,13 +9,17 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
 }
+
 html{
-    &::-webkit-scrollbar{
-        width: 0.5rem; 
-    }
-    &::-webkit-scrollbar-thumb{
-        background-color: darkgrey;  
-    }
+    &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #03dac6;
+  }
+  &::-webkit-scrollbar-track {
+    background: #bb86fc;
+  }
     @font-face {
             src: url(${MontserratRegular}) format("truetype");
             font-family: "Montserrat";
@@ -34,9 +38,11 @@ html{
             font-weight: normal;
             font-display: swap;
           }
+    font-family: "Montserrat", sans-serif;
 }
 body{
-    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    padding: 0 5rem;
     background-color: #121212;
     color: white;
 }
@@ -47,7 +53,12 @@ h2{
 }
 h3{
     font-size: 1.3rem;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
+}
+h4{
+    font-size: 1rem;
+    padding: 1.5rem 0;
+    text-transform: uppercase;
 }
 p {
     font-size: 0.8rem;
