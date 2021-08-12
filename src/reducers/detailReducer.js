@@ -1,4 +1,7 @@
-const initialState = { game: {}, screenshots: {} };
+const initialState = {
+  game: { platforms: [] },
+  screenshots: { results: [] },
+};
 
 const detailReducer = (state = initialState, action) => {
   switch (action.type) {
