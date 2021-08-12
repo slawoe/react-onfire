@@ -69,6 +69,9 @@ a{
 text-decoration: none;
 color: #03DAC6;
 }
+img{
+  display: block;
+}
 `;
 
 export default GlobalStyles;

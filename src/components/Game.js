@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 const Game = ({ name, released, image, id }) => {
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
+    document.body.style.overflow = "hidden";
     dispatch(loadDetail(id));
   };
   return (
@@ -26,11 +27,14 @@ const StyledGame = styled(motion.div)`
   text-align: center;
   border-radius: 1rem;
   cursor: pointer;
+  overflow: hidden;
+  p {
+    padding-bottom: 0.5rem;
+  }
   img {
     width: 100%;
     height: 40vh;
     object-fit: cover;
-    padding-bottom: 1rem;
   }
 `;
 
