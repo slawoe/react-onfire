@@ -86,7 +86,8 @@ const Home = () => {
 const GameList = styled(motion.div)`
   padding: 0;
   h2 {
-    padding: 5rem 0;
+    padding: 3rem 0;
+    text-align: center;
   }
 `;
 const Games = styled(motion.div)`
@@ -95,6 +96,9 @@ const Games = styled(motion.div)`
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-column-gap: 3rem;
   grid-row-gap: 5rem;
+  @media only screen and (max-width: 768px) {
+    grid-row-gap: 2rem;
+  }
 `;
 
 export default Home;

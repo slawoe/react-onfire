@@ -38,8 +38,11 @@ const Nav = () => {
 };
 
 const StyledNav = styled(motion.nav)`
-  padding: 3rem 5rem;
+  padding: 3rem 5rem 0;
   text-align: center;
+  @media only screen and (max-width: 768px) {
+    padding: 3rem 0 0;
+  }
   input {
     width: 30%;
     font-size: 1.5rem;
@@ -51,16 +54,24 @@ const StyledNav = styled(motion.nav)`
     border-radius: 1rem 0 0 1rem;
     color: white;
     font-size: 1rem;
+    @media only screen and (max-width: 768px) {
+      width: 50%;
+      font-size: 0.75rem;
+    }
   }
   button {
     font-size: 1rem;
     border: none;
-    padding: 0.5rem 2rem;
     cursor: pointer;
+    padding: 0.5rem 2rem;
     background: #bb86fc;
     color: white;
     border-radius: 0 1rem 1rem 0;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+    @media only screen and (max-width: 768px) {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+    }
   }
 `;
 const Logo = styled(motion.div)`

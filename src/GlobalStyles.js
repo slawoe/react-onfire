@@ -45,25 +45,41 @@ body{
     padding: 0 5rem;
     background-color: #121212;
     color: white;
+    @media only screen and (max-width: 768px){
+      
+      padding: 0 5vw;
+    }
 }
 h2{
     font-size: 3rem;
     font-family: "AbrilFatface", cursive;
     font-weight: lighter;
+    @media only screen and (max-width: 768px){
+      font-size: 1.5rem;
+    }
 }
 h3{
     font-size: 1.3rem;
     padding: 1.5rem 0;
+    @media only screen and (max-width: 768px){
+      font-size: 1rem;
+    }
 }
 h4{
     font-size: 1rem;
     padding: 1.5rem 0;
     text-transform: uppercase;
+    @media only screen and (max-width: 768px){
+      font-size: 0.8rem;
+    }
 }
 p {
     font-size: 0.8rem;
     line-height: 2;
     color: #BB86FC;
+    @media only screen and (max-width: 768px){
+      font-size: 0.7rem;
+    }
 }
 a{
 text-decoration: none;
