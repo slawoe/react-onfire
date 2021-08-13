@@ -4,11 +4,11 @@ import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { smallImage } from "../utils/utils";
 
-const GameDetail = () => {
+const GameDetail = ({ pathId }) => {
   const history = useHistory();
   const exitDetailHandler = (e) => {
     const element = e.target;
-    if (element.classList.contains("shadow")) {
+    if (element.classList.contains("close")) {
       document.body.style.overflow = "auto";
       history.push("/");
     }
@@ -17,11 +17,15 @@ const GameDetail = () => {
   return (
     <>
       {!isLoading && (
-        <CardShadow className="shadow" onClick={exitDetailHandler}>
-          <Detail>
+        <CardShadow className="close" onClick={exitDetailHandler}>
+          <Detail
+            className="close"
+            onClick={exitDetailHandler}
+            layoutId={pathId}
+          >
             <Stats>
               <div className="rating">
-                <h3>{game.name}</h3>
+                <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                 <p>Rating: {game.rating}</p>
               </div>
               <Info>
@@ -34,9 +38,10 @@ const GameDetail = () => {
               </Info>
             </Stats>
             <Media>
-              <img
+              <motion.img
                 src={smallImage(game.background_image, 1280)}
                 alt="background"
+                layoutId={`image ${pathId}`}
               />
             </Media>
             <Description>
@@ -67,6 +72,7 @@ const CardShadow = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0%;
+  z-index: 5;
   &::-webkit-scrollbar {
     width: 0.5rem;
   }
