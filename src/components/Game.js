@@ -41,6 +41,10 @@ const StyledGame = styled(motion.div)`
   border-radius: 1rem;
   cursor: pointer;
   overflow: hidden;
+  @media only screen and (max-width: 768px) {
+    width: 90vw;
+  }
+
   p {
     padding-bottom: 0.5rem;
   }
