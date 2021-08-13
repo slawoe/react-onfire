@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { smallImage } from "../utils/utils";
+import { smallImage } from "../assets/utils/utils";
 import apple from "../assets/img/apple.svg";
 import gamepad from "../assets/img/gamepad.svg";
 import nintendo from "../assets/img/nintendo.svg";
