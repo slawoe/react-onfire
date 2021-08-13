@@ -11,6 +11,8 @@ import xbox from "../assets/img/xbox.svg";
 import playstation from "../assets/img/playstation.svg";
 import ps5 from "../assets/img/PS5.svg";
 import xboxsx from "../assets/img/xboxsx.svg";
+import starEmpty from "../assets/img/star-empty.png";
+import starFull from "../assets/img/star-full.png";
 
 const GameDetail = ({ pathId }) => {
   const history = useHistory();
@@ -20,6 +22,16 @@ const GameDetail = ({ pathId }) => {
       document.body.style.overflow = "auto";
       history.push("/");
     }
+  };
+  const getStars = () => {
+    const stars = [];
+    const rating = Math.floor(game.rating);
+    for (let i = 1; i <= 5; i++) {
+      i <= rating
+        ? stars.push(<img alt="start" key={i} src={starFull} />)
+        : stars.push(<img alt="start" key={i} src={starEmpty} />);
+    }
+    return stars;
   };
   const getPlatform = (platform) => {
     switch (platform) {
@@ -57,6 +69,7 @@ const GameDetail = ({ pathId }) => {
               <div className="rating">
                 <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                 <p>Rating: {game.rating}</p>
+                {getStars()}
               </div>
               <Info>
                 <h3>Platforms</h3>
@@ -135,6 +148,12 @@ const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .rating > img {
+    margin-top: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    display: inline;
+  }
 `;
 
 const Info = styled(motion.div)`
