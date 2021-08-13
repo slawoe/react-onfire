@@ -3,6 +3,16 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { smallImage } from "../utils/utils";
+import apple from "../assets/img/apple.svg";
+import gamepad from "../assets/img/gamepad.svg";
+import nintendo from "../assets/img/nintendo.svg";
+import steam from "../assets/img/steam.svg";
+import xbox from "../assets/img/xbox.svg";
+import playstation from "../assets/img/playstation.svg";
+import ps5 from "../assets/img/PS5.svg";
+import xboxsx from "../assets/img/xboxsx.svg";
+import starEmpty from "../assets/img/star-empty.png";
+import starFull from "../assets/img/star-full.png";
 
 const GameDetail = ({ pathId }) => {
   const history = useHistory();
@@ -11,6 +21,38 @@ const GameDetail = ({ pathId }) => {
     if (element.classList.contains("close")) {
       document.body.style.overflow = "auto";
       history.push("/");
+    }
+  };
+  const getStars = () => {
+    const stars = [];
+    const rating = Math.floor(game.rating);
+    for (let i = 1; i <= 5; i++) {
+      i <= rating
+        ? stars.push(<img alt="start" key={i} src={starFull} />)
+        : stars.push(<img alt="start" key={i} src={starEmpty} />);
+    }
+    return stars;
+  };
+  const getPlatform = (platform) => {
+    switch (platform) {
+      case "PlayStation 4":
+        return playstation;
+      case "PlayStation 5":
+        return ps5;
+      case "Xbox Series S/X":
+        return xboxsx;
+      case "Xbox S":
+        return xbox;
+      case "Xbox One":
+        return xbox;
+      case "PC":
+        return steam;
+      case "Nintendo Switch":
+        return nintendo;
+      case "iOS":
+        return apple;
+      default:
+        return gamepad;
     }
   };
   const { game, screenshots, isLoading } = useSelector((state) => state.detail);
@@ -27,12 +69,17 @@ const GameDetail = ({ pathId }) => {
               <div className="rating">
                 <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                 <p>Rating: {game.rating}</p>
+                {getStars()}
               </div>
               <Info>
                 <h3>Platforms</h3>
                 <Platforms>
                   {game.platforms.map((data) => (
-                    <h3 key={data.platform.id}>{data.platform.name}</h3>
+                    <img
+                      src={getPlatform(data.platform.name)}
+                      key={data.platform.id}
+                      alt={data.platform.name}
+                    />
                   ))}
                 </Platforms>
               </Info>
@@ -101,6 +148,12 @@ const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  .rating > img {
+    margin-top: 0.25rem;
+    width: 1rem;
+    height: 1rem;
+    display: inline;
+  }
 `;
 
 const Info = styled(motion.div)`
