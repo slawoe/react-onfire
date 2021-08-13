@@ -26,3 +26,5 @@ export const gameDetailsURL = (game_id) =>
   `${base_url}games/${game_id}.json?&key=${process.env.REACT_APP_API_KEY}`;
 export const gameScreenshotURL = (game_id) =>
   `${base_url}games/${game_id}/screenshots?&.json?&key=${process.env.REACT_APP_API_KEY}`;
+export const searchGameURL = (game_name) =>
+  ` ${base_url}games?key=${process.env.REACT_APP_API_KEY}&search=${game_name}&page_size=9`;
