@@ -6,6 +6,7 @@ import { loadGames } from "../actions/gamesAction";
 import Game from "../components/Game";
 import GameDetail from "../components/GameDetail";
 import { useLocation } from "react-router-dom";
+import { fadeIn } from "../assets/animations/animations";
 
 const Home = () => {
   const location = useLocation();
@@ -18,7 +19,7 @@ const Home = () => {
     (state) => state.games
   );
   return (
-    <GameList>
+    <GameList variants={fadeIn} initial="hidden" animate="show">
       <AnimateSharedLayout>
         <AnimatePresence>
           {pathId && <GameDetail pathId={pathId} />}
