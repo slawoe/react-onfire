@@ -51,6 +51,7 @@ const StyledNav = styled(motion.nav)`
     background: transparent;
     margin-top: 1rem;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    border: 1px solid #bb86fc;
     border-radius: 1rem 0 0 1rem;
     color: white;
     font-size: 1rem;
@@ -66,6 +67,7 @@ const StyledNav = styled(motion.nav)`
     padding: 0.5rem 2rem;
     background: #bb86fc;
     color: white;
+    border: 1px solid #bb86fc;
     border-radius: 0 1rem 1rem 0;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
     @media only screen and (max-width: 768px) {
