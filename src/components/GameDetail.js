@@ -60,16 +60,17 @@ const GameDetail = ({ pathId }) => {
     <>
       {!isLoading && (
         <CardShadow className="close" onClick={exitDetailHandler}>
-          <Detail
-            className="close"
-            onClick={exitDetailHandler}
-            layoutId={pathId}
-          >
+          <Detail layoutId={pathId}>
+            <div className="close">
+              <CloseButton className="close" onClick={exitDetailHandler}>
+                X
+              </CloseButton>
+            </div>
             <Stats>
               <div className="rating">
                 <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                 <p>Rating: {game.rating}</p>
-                {getStars()}
+                <p>{getStars()}</p>
               </div>
               <Info>
                 <h3>Platforms</h3>
@@ -145,6 +146,23 @@ const Detail = styled(motion.div)`
   img {
     width: 100%;
   }
+  .close {
+    display: flex;
+    justify-content: flex-end;
+  }
+`;
+
+const CloseButton = styled(motion.button)`
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  font-weight: bold;
+  background: #bb86fc;
+  cursor: pointer;
+  @media only screen and (max-width: 768px) {
+    padding: 0.25rem 0.5rem;
+  }
 `;
 
 const Stats = styled(motion.div)`
@@ -154,7 +172,7 @@ const Stats = styled(motion.div)`
   @media only screen and (max-width: 768px) {
     flex-direction: column;
   }
-  .rating > img {
+  .rating > p > img {
     margin-top: 0.25rem;
     width: 1rem;
     height: 1rem;
