@@ -14,7 +14,7 @@ Current version: 1.0 || 14.08.2021
 
 ## 🖱 Deployment
 
-Update 25.11.2022 -> Thanks to Salesforce who want to make money on Heroku even with private projects and therefore abolish the Free Dynos with the 28.11.2022 this app is **TEMPORARILY OFFLINE**.
+Update 11/25/2022: Thanks to Salesforce wanting to make money on Heroku even with private projects and therefore eliminating Free Dynos as of 11/28/2022, this app is **TEMPORARILY OFFLINE**.
 
 ## 📲 Design and layout infos
 
